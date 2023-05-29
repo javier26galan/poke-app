@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+:root{
+  --blue: rgb(0, 122, 199);
+  --yellow: rgb(250, 205, 118);
+  --green: rgb(66, 180, 167);
+  --red: rgb(253, 85, 3);
+}
+
+@font-face {
+  font-family: gameboy;
+  src: url(assets/font/gameboy.ttf);
+}
+
+*{
+  font-family: "gameboy"
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--blue);
+}
