@@ -11,7 +11,7 @@ import { PokedexComponent } from './pokedex.component';
   ],
   imports: [
     CommonModule,
-    PokedexRoutingModule
+    PokedexRoutingModule,
   ]
 })
 export class PokedexModule { }
