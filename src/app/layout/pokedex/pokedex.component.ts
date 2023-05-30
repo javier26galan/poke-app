@@ -11,20 +11,20 @@ export class PokedexComponent implements OnInit {
 
   constructor(private pokemonsService: PokemonsService) { }
 
-  pokeArr!:cardDex[]
+  pokeArr:cardDex[] = []
 
   showAllPokemons(){
     this.pokemonsService.getAllPokemon()
-      .subscribe((data) => {
-        console.log(data.results.length);
-        return data.result;
+      .subscribe((data:any) => {
+        data.results.forEach((pokemon: any) => {
+          this.pokeArr.push(pokemon)
+        });
       });
   }
 
   ngOnInit(): void {
-    // this.pokeArr = this.showAllPokemons();
     this.showAllPokemons();
-
+    console.log(this.pokeArr);
   }
 
 }
