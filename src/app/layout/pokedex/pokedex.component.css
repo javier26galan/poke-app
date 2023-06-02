@@ -1,33 +1,211 @@
-.poke-list{
+.poke-list {
   list-style-type: none;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
 }
-.poke-list__item{
-  border: 0.25em solid var(--gray);
+.poke-list__item {
+  border: 0.25em solid var(--green);
   background-color: var(--blue);
-  align-items: center;
-  margin: 0.75em;
+  margin: 1em;
   box-shadow: 2px 2px 10px var(--black);
+  padding: 0.50em;
+  height: 12em;
 }
 
+.poke-list__item:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 
-.poke-list__name{
+.poke-list__button {
+  width: 100%;
   text-decoration: none;
   color: var(--white);
   background-color: var(--blue);
   padding: 0.25em;
-  font-size: 0.60em;
+  font-size: 0.6em;
   border: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  justify-content: center;
 }
-.poke-list__item .poke-list__name:hover{
+.poke-list__button:hover {
   color: var(--black);
 }
-.poke-list__number{
+.poke-list__number {
   color: var(--white);
 }
-.poke-list__img{
-  width: 2.5em;
+.poke-list__img {
+  width: 100%;
+}
+
+.poke-list__img:hover {
+  animation-name: pokeball;
+  animation-duration: 4s;
+}
+
+.poke-list__container {
+  width: 100%;
+}
+
+.poke-list__types{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5em 1em 0.5em 1em;
+}
+.poke-list__type-item{
+  font-size: 0.5em;
+  padding: 0.5em;
+}
+
+.hidden{
+  display: none;
+}
+
+/* types */
+
+.bug {
+  background-color: var(--bug);
+}
+
+.dark {
+  background-color: var(--dark);
+}
+
+.dragon {
+  background-color: var(--dragon);
+}
+
+.electric {
+  background-color: var(--electric);
+}
+
+.fairy {
+  background-color: var(--fairy);
+}
+
+.fighting {
+  background-color: var(--figth);
+}
+
+.fire {
+  background-color: var(--fire);
+}
+
+.flying {
+  background-color: var(--flying);
+}
+
+.ghost {
+  background-color: var(--ghost);
+}
+
+.grass {
+  background-color: var(--grass);
+}
+
+.ground {
+  background-color: var(--ground);
+}
+
+.ice {
+  background-color: var(--ice);
+}
+
+.normal {
+  background-color: var(--normal);
+}
+
+.poison {
+  background-color: var(--poison);
+}
+
+.psychic {
+  background-color: var(--psychic);
+}
+
+.rock {
+  background-color: var(--rock);
+}
+
+.steell {
+  background-color: var(--steel);
+}
+
+.water {
+  background-color: var(--water);
+}
+
+/* animation */
+@keyframes pokeball {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: rotate(5deg);
+  }
+  10% {
+    transform: scale(1.1);
+  }
+  15% {
+    transform: rotate(-5deg);
+  }
+  20% {
+    transform: scale(1);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  35% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: scale(1);
+  }
+  45% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  55% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: scale(1);
+  }
+  65% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: scale(1);
+  }
+  85% {
+    transform: rotate(5deg);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  95% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

@@ -1,4 +1,4 @@
-export interface cardDex{
+export interface CardDex{
   name:string;
   url:string
 }

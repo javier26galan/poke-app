@@ -1,8 +1,18 @@
-<ul class="poke-list">
-  <li *ngFor="let pokemon of pokeArr; index as i" class="poke-list__item">
-    <button class="poke-list__name">
-      <img class="poke-list__img" src="../../../assets/pokeball.png" alt="pokeball" />
+<app-pokemon-detail [pokemon]="pokemonDetail" id="poke-detail"></app-pokemon-detail>
+<div class="poke-list">
+  <div *ngFor="let pokemon of pokemonDetails; index as i" class="poke-list__item" >
+    <div class="poke-list__container">
+      <div class="poke-list__container-img">
+        <img class="poke-list__img" src="{{pokemon.sprite}}" alt="pokeball" id="{{pokemon.name}}" (click)="onClickDetail($event)"/>
+      </div>
+    </div>
+    <div class="poke-list__types">
+      <span class="poke-list__type-item {{type}}" *ngFor="let type of pokemon.type">
+        {{type}}
+      </span>
+    </div>
+    <button class="poke-list__button">
       <span class="poke-list__number"> nº.{{ i + 1 }}-</span>{{ pokemon.name }}
     </button>
-  </li>
-</ul>
+  </div>
+</div>

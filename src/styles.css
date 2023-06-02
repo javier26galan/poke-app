@@ -8,9 +8,38 @@
   --darkGreen: #206960;
   --red: rgb(253, 85, 3);
   --purple: #6e57af;
-  --white: #F8F8F8;
+  --white: #f8f8f8;
   --gray: #636363;
   --black: #000000;
+  --white: #f8f8f8;
+  --downy: #76d7c4;
+  --black: #000000;
+  --gray: #60605b;
+  --body-bg: lightblue;
+  --body-color: black;
+  --primary: #206960;
+  --secondary: #45a49a;
+  --danger: red;
+  --btn: #7258ab;
+/* types */
+  --bug: #88960d;
+  --dark: #3c2d23;
+  --dragon: #43328f;
+  --electric: #e79302;
+  --fairy: #e08ee0;
+  --figth: #5f2311;
+  --fire: #c72100;
+  --flying: #5e74d4;
+  --ghost: #4a4a98;
+  --grass: #277801;
+  --ground: #ad8c32;
+  --ice: #6dd3f5;
+  --normal: #afa796;
+  --poison: #6d2470;
+  --psychic: #dd3165;
+  --rock: #9e853d;
+  --steel: #8e8e9e;
+  --water: #0c67c2;
 }
 
 @font-face {
@@ -28,5 +57,5 @@ body {
   margin: 0;
   padding: 0;
   color: var(--white);
-  background-color: var(--darkGreen);
+  background-color: var(--ligthBlue);
 }
