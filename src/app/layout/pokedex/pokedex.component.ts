@@ -12,15 +12,15 @@ import { Observable } from 'rxjs';
 export class PokedexComponent implements OnInit {
   constructor(private pokemonsService: PokemonsService) {}
 
-  pokemonDetails: PokeDetail[] = [];
-  pokeArr: CardDex[] = [];
-  pokemonDetail?: PokeDetail;
+  pokemonDetails: PokeDetail[] = []; // have all the pokemon details
+  pokeArr: CardDex[] = []; // have all the names and urls to get the details
+  pokemonDetail?: PokeDetail;  //single pokemon detail to send to the pokemon detail component
+  pokeList: CardDex[] = [] // pokemons to display in de search
 
   // get the data of all the pokemon
   showAllPokemons() {
     this.pokemonsService.getAllPokemon().subscribe((data: any) => {
       this.pokeArr = data;
-      console.log(this.pokeArr);
       this.pokeArr.forEach((pokemon) => {
         // transform the data to the model
         this.pokemonsService.getPokemon(pokemon.url).subscribe((data: any) => {
@@ -46,11 +46,11 @@ export class PokedexComponent implements OnInit {
   // click to display the pokemon detail
   onClickDetail(e: any) {
     let name = e.target;
+    let detail = document.getElementById('poke-detail');
     this.pokemonDetail = this.pokemonDetails.find(
       (pokemon) => pokemon.name == name.id
     );
-    console.log(this.pokemonDetail);
-    // console.log(name.id);
+    detail?.classList.remove('hidden')
   }
 
   ngOnInit(): void {

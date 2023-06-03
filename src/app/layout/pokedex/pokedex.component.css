@@ -43,10 +43,10 @@
   width: 100%;
 }
 
-.poke-list__img:hover {
+/* .poke-list__img:hover {
   animation-name: pokeball;
   animation-duration: 4s;
-}
+} */
 
 .poke-list__container {
   width: 100%;
@@ -66,7 +66,7 @@
 }
 
 .hidden{
-  display: none;
+  visibility: hidden;
 }
 
 /* types */

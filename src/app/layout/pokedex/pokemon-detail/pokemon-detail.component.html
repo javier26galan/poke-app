@@ -1,4 +1,12 @@
-
-<img src="{{pokemon?.sprite}}" alt="" class="poke-detail__img">
-<p class="poke-detail__name">{{pokemon?.name}}</p>
-<p class="poke-detail__info">Weight: {{pokemon?.weight}} Height: {{pokemon?.height}}</p>
+<div class="poke-container">
+  <div class="poke-container--close">
+    <span class="poke-close" id="close" (click)="closeModal()">X</span>
+  </div>
+  <div class="poke-detail__img-container">
+    <img src="{{ pokemon?.sprite }}" alt="{{pokemon?.name}}" class="poke-detail__img" />
+  </div>
+  <p class="poke-detail__name">{{ pokemon?.name }}</p>
+  <p class="poke-detail__info">
+    Weight: {{ pokemon?.weight }} Height: {{ pokemon?.height }}
+  </p>
+</div>
