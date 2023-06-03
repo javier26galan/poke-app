@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { PokemonsService } from '../../services/pokemons.service';
 import { CardDex } from '../../models/cardDex.model';
 import { PokeDetail } from 'src/app/models/pokeDetail.model';
@@ -15,7 +15,7 @@ export class PokedexComponent implements OnInit {
   pokemonDetails: PokeDetail[] = []; // have all the pokemon details
   pokeArr: CardDex[] = []; // have all the names and urls to get the details
   pokemonDetail?: PokeDetail;  //single pokemon detail to send to the pokemon detail component
-  pokeList: CardDex[] = [] // pokemons to display in de search
+  pokeList: CardDex[] = this.pokeArr // pokemons to display in de search
 
   // get the data of all the pokemon
   showAllPokemons() {
@@ -51,6 +51,20 @@ export class PokedexComponent implements OnInit {
       (pokemon) => pokemon.name == name.id
     );
     detail?.classList.remove('hidden')
+  }
+
+  searchPokemon(){
+    const pokeSearch = (document.getElementById('search') as HTMLInputElement).value;
+    const pokeFind = document.getElementsByClassName('poke-list__item')
+    for (let i = 0; i < pokeFind.length; i++) {
+      const pokemon = pokeFind[i];
+      console.log(pokemon.id.includes(pokeSearch));
+      if (!pokemon.id.includes(pokeSearch)){
+        pokeFind[i].classList.add("ocult")
+      }else{
+        pokeFind[i].classList.remove('ocult');
+      }
+    }
   }
 
   ngOnInit(): void {

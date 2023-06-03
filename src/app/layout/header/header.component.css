@@ -1,0 +1,17 @@
+.nav-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  text-align: center;
+  padding: 1em;
+  background-color: var(--yellow);
+  border-bottom: 5px solid var(--red);
+}
+
+.nav__link{
+  font-size: 0.70em;
+  list-style: none;
+  text-decoration: none;
+  color: var(--red);
+  cursor: pointer;
+}

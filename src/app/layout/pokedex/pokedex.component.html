@@ -1,6 +1,9 @@
-<app-pokemon-detail [pokemon]="pokemonDetail" id="poke-detail" class="hidden"></app-pokemon-detail>
+<app-pokemon-detail [pokemon]="pokemonDetail" id="poke-detail" class="hidden" ></app-pokemon-detail>
+<div class="poke-container--search">
+  <input type="text" id="search" class="poke-search" placeholder="Find a pokemon" (keyup)="searchPokemon()">
+</div>
 <div class="poke-list">
-  <div *ngFor="let pokemon of pokemonDetails; index as i" class="poke-list__item" >
+  <div *ngFor="let pokemon of pokemonDetails; index as i" id="{{pokemon.name}}" class="poke-list__item" >
     <div class="poke-list__container">
       <div class="poke-list__container-img">
         <img class="poke-list__img" src="{{pokemon.sprite}}" alt="pokeball" id="{{pokemon.name}}" (click)="onClickDetail($event)"/>
