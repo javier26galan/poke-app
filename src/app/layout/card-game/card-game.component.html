@@ -1,1 +1,13 @@
-<p>card-game works!</p>
+<button *ngIf="GAMEOVER == true" (click)="cardGameLoop()" class="btn btn-start">
+  Start
+</button>
+<span *ngIf="GAMEOVER == false" class="life-count">
+ Lives: {{this.life}}
+</span>
+<div class="game-container" *ngIf="gameArr.length > 1 && GAMEOVER == false">
+  <div class="game-card back" id="{{card.name}}" (click)="pickCard($event)" *ngFor="let card of gameArr;">
+    <div class="game__img-container" >
+      <img *ngIf="card.side === true" src="{{card.sprite}}" alt="" class="game__img">
+    </div>
+  </div>
+</div>
