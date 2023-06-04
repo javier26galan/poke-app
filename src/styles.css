@@ -60,3 +60,7 @@ body {
   background-color: var(--ligthBlue);
 }
 
+.disabled {
+  pointer-events: none;
+}
+

@@ -30,16 +30,19 @@ export class CardGameComponent implements OnInit {
 
   // change the side of the card if false or continue if true
   handleSelection(checked: boolean, arr: CardGame[]) {
-    setTimeout(() => {
       if (!checked) {
-        for (let i = 0; i < arr.length; i++) {
-          arr[i].side = false;
-        }
         this.life--;
+        // in timeout to delay the turn of the card
+        setTimeout(() => {
+          for (let i = 0; i < arr.length; i++) {
+            arr[i].side = false;
+            document.getElementById(`${arr[i].name}`)?.classList.add("back");
+          }
+        }, 500);
       } else {
         this.POINTS++;
       }
-    }, 2000);
+
   }
 
   // check the chosen cards
@@ -49,9 +52,10 @@ export class CardGameComponent implements OnInit {
 
   // select a card and change side
   pickCard($event: any) {
-    console.log($event);
     let name = $event.target.id;
     let img = $event.target.childNodes[0];
+    const gameContainer = document.getElementById("game");
+    gameContainer?.classList.add('disabled');
     $event.target.classList.remove('back');
     img.classList.add('animation');
     // take the selected card a put it in the chosen array
@@ -67,7 +71,11 @@ export class CardGameComponent implements OnInit {
       this.handleSelection(check, this.chosenArr);
       this.chosenArr = [];
     }
-    console.log(`Points: ${this.POINTS}/${this.gameArr.length / 2}`);
+    // eliminate the animation class
+    setTimeout(() => {
+      img.classList.remove('animation');
+      gameContainer?.classList.remove('disabled');
+    }, 1000);
     if (this.life == 0) {
       alert('Game over');
       this.GAMEOVER = true;
@@ -76,10 +84,6 @@ export class CardGameComponent implements OnInit {
       alert('You won');
       this.GAMEOVER = true;
     }
-    // eliminate the animation class
-    setTimeout(() => {
-      img.classList.remove('animation');
-    }, 2000);
   }
 
   // randomize the content of an array
